@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color:gray;
+  color:gray;
+
+}
+h1, h2 {
+  color:gray;
+  font-weight:bold;
+}
+
