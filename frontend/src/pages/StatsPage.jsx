@@ -15,9 +15,7 @@ export default function StatsPage() {
   const shortUrl =
     (import.meta.env.VITE_BASE_URL || "http://localhost:4000") + "/" + code;
 
-  // -----------------------------
-  // Fetch link stats from backend
-  // -----------------------------
+ 
   useEffect(() => {
     const fetchStats = async () => {
       try {
@@ -37,18 +35,14 @@ export default function StatsPage() {
     fetchStats();
   }, [code]);
 
-  // -----------------------------
-  // Copy Handler
-  // -----------------------------
+  
   const handleCopy = async () => {
     const ok = await copyToClipboard(shortUrl);
     if (ok) 
     toast.success("Copied to clipboard!");
   };
 
-  // -----------------------------
-  // UI
-  // -----------------------------
+ 
   if (loading)
     return <div className="text-center py-10 text-gray-600">Loading stats...</div>;
 
@@ -66,7 +60,7 @@ export default function StatsPage() {
       </h1>
 
       <div className="bg-white shadow-sm border rounded p-6">
-        {/* Short URL */}
+        
         <div className="mb-4">
           <p className="text-sm font-medium text-gray-600 mb-1">Short URL</p>
           <div className="flex items-center gap-3 mt-1">
@@ -88,7 +82,7 @@ export default function StatsPage() {
           </div>
         </div>
 
-        {/* Target URL */}
+        
         <div className="mb-4">
           <p className="text-sm font-medium text-gray-600">Target URL</p>
           <p className="mt-1 break-all text-gray-800">
@@ -96,25 +90,25 @@ export default function StatsPage() {
           </p>
         </div>
 
-        {/* Clicks */}
+        
         <div className="mb-4">
           <p className="text-sm font-medium text-gray-600">Total Clicks</p>
           <p className="mt-1 text-gray-800">{link.clicks}</p>
         </div>
 
-        {/* Last Clicked */}
+        
         <div className="mb-4">
           <p className="text-sm font-medium text-gray-600">Last Clicked</p>
           <p className="mt-1 text-gray-800">{formatDate(link.lastClicked)}</p>
         </div>
 
-        {/* Created At */}
+       
         <div className="mb-4">
           <p className="text-sm font-medium text-gray-600">Created At</p>
           <p className="mt-1 text-gray-800">{formatDate(link.createdAt)}</p>
         </div>
 
-        {/* Back Button */}
+       
         <div className="mt-6">
           <Link
             to="/"

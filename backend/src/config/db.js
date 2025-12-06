@@ -8,7 +8,7 @@ export async function connectDB() {
 
   try {
     await mongoose.connect(uri, {
-      // options are optional with mongoose 7+
+      
     });
     console.log("MongoDB connected");
   } catch (err) {

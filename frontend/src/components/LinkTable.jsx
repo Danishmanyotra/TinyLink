@@ -17,7 +17,7 @@ export default function LinkTable({ links, onDelete }) {
   return (
     <div className="bg-white border rounded-lg shadow-sm">
 
-      {/* Desktop + Tablet View (Table Layout) */}
+      
       <div className="hidden md:block overflow-x-auto">
         <table className="min-w-full border-collapse">
           <thead className="bg-gray-100 border-b border-gray-200">
@@ -38,7 +38,7 @@ export default function LinkTable({ links, onDelete }) {
         </table>
       </div>
 
-      {/* Mobile View (Card Layout) */}
+      
       <div className="md:hidden space-y-4 p-3">
         {links.map((link) => (
           <div
@@ -69,7 +69,7 @@ export default function LinkTable({ links, onDelete }) {
               </div>
             </div>
 
-            {/* Actions */}
+            
             <div className="flex gap-3 mt-3">
               <button
                 onClick={() => onCopy(link.code)}

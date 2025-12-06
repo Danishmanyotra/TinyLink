@@ -8,6 +8,5 @@ const LinkSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
-// By default toJSON/toObject keep _id; we can transform if desired.
-// Keep it simple for autograding: return fields as-is.
+
 export default mongoose.models.Link || mongoose.model("Link", LinkSchema);

@@ -38,12 +38,12 @@ export default function Healthcheck() {
       </h1>
 
       <div className="bg-white shadow-sm border rounded p-6">
-        {/* Loading */}
+       
         {loading && (
           <p className="text-gray-600 text-center py-8">Checking system...</p>
         )}
 
-        {/* Result */}
+       
         {!loading && (
           <div>
             <div className="mb-4">
@@ -57,7 +57,7 @@ export default function Healthcheck() {
               </p>
             </div>
 
-            {/* Version */}
+            
             <div className="mb-4">
               <p className="text-sm font-medium text-gray-600">Version</p>
               <p className="mt-1 text-gray-800">
@@ -65,19 +65,19 @@ export default function Healthcheck() {
               </p>
             </div>
 
-            {/* Response Time */}
+            
             <div className="mb-4">
               <p className="text-sm font-medium text-gray-600">Response Time</p>
               <p className="mt-1 text-gray-800">{responseTime}</p>
             </div>
 
-            {/* Checked At */}
+            
             <div className="mb-4">
               <p className="text-sm font-medium text-gray-600">Last Checked</p>
               <p className="mt-1 text-gray-800">{checkedAt}</p>
             </div>
 
-            {/* Back */}
+            
             <div className="mt-6">
               <Link
                 to="/"

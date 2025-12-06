@@ -10,7 +10,7 @@ export default function LinkForm({ onCreated }) {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  // front-end URL validation (simple regex)
+ 
   const isValidUrl = (value) => {
     try {
       new URL(value);
@@ -69,7 +69,7 @@ export default function LinkForm({ onCreated }) {
         Create Short Link
       </h2>
 
-      {/* Long URL Input */}
+      
       <label className="block mb-3">
         <span className="text-sm font-medium text-gray-700">Long URL</span>
         <input
@@ -81,7 +81,7 @@ export default function LinkForm({ onCreated }) {
         />
       </label>
 
-      {/* Custom Code Input */}
+      
       <label className="block mb-4">
         <span className="text-sm font-medium text-gray-700">
           Custom Code (optional)
@@ -95,17 +95,17 @@ export default function LinkForm({ onCreated }) {
         />
       </label>
 
-      {/* Error Message */}
+      
       {error && (
         <p className="text-red-600 mb-2 text-sm font-medium">{error}</p>
       )}
 
-      {/* Success Message */}
+      
       {success && (
         <p className="text-green-600 mb-2 text-sm font-medium">{success}</p>
       )}
 
-      {/* Submit Button */}
+      
       <button
         disabled={loading}
         className={`px-5 py-2.5 rounded-lg text-white font-medium shadow-sm transition ${

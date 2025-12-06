@@ -11,9 +11,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
 
-  // -----------------------------
-  // Fetch all links from backend
-  // -----------------------------
+
   const fetchLinks = async () => {
     try {
       setLoading(true);
@@ -27,14 +25,12 @@ export default function Dashboard() {
     }
   };
 
-  // Run once on mount
+ 
   useEffect(() => {
     fetchLinks();
   }, []);
 
-  // -----------------------------
-  // Delete link
-  // -----------------------------
+ 
   const handleDelete = async (code) => {
     const yes = confirm(`Delete short link "${code}"?`);
     if (!yes) return;
@@ -49,9 +45,7 @@ export default function Dashboard() {
     }
   };
 
-  // -----------------------------
-  // Search / Filter logic
-  // -----------------------------
+
   useEffect(() => {
     const q = search.toLowerCase();
     const result = links.filter(
@@ -62,22 +56,20 @@ export default function Dashboard() {
     setFiltered(result);
   }, [search, links]);
 
-  // -----------------------------
-  // When new link is created
-  // -----------------------------
+ 
   const handleCreated = () => {
     fetchLinks();
   };
 
   return (
     <div>
-      {/* Title */}
+      
       <h1 className="text-2xl font-semibold mb-6 tracking-tight">Dashboard</h1>
 
-      {/* Add Link Form */}
+      
       <LinkForm onCreated={handleCreated} />
 
-      {/* Search Bar */}
+      
       <div className="flex items-center justify-between mb-4">
         <input
           type="text"
@@ -91,12 +83,12 @@ export default function Dashboard() {
         <span className="text-sm text-gray-500">{filtered.length} links</span>
       </div>
 
-      {/* Loading State */}
+      
       {loading && (
         <div className="text-center py-10 text-gray-600">Loading links...</div>
       )}
 
-      {/* Table */}
+      
       {!loading && <LinkTable links={filtered} onDelete={handleDelete} />}
     </div>
   );
