@@ -8,10 +8,7 @@ import errorHandler from "./middlewares/errorHandler.js";
 const app = express();
 
 app.use(helmet());
-app.use(cors({
-  origin: "https://tinylink-frontend-k0cg.onrender.com",
-  methods: "GET,POST,DELETE",
-}));
+app.use(cors());
 app.use(express.json());
 
 // healthcheck
