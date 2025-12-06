@@ -9,7 +9,7 @@ const app = express();
 
 app.use(helmet());
 app.use(cors({
-  origin: "*",
+  origin: "https://tinylink-frontend-k0cg.onrender.com",
   methods: "GET,POST,DELETE",
 }));
 app.use(express.json());
